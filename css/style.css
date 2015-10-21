@@ -1,4 +1,13 @@
 * {
   margin: 0; }
 
+.about h2 {
+  color: red;
+  background: url("../images/cornerBorder.png") no-repeat;
+  width: 278px;
+  height: 122px;
+  font-size: 40pt;
+  text-align: center;
+  padding-top: 30px; }
+
 /*# sourceMappingURL=style.css.map */
