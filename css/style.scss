@@ -1,13 +1,285 @@
+@import "reset";
+@import "fonts";
+@import "variables";
+@import "mixins";
+
+/* ============ GENERAL STYLES ============== */
+
 * {
-  margin: 0;
+  box-sizing: border-box;
 }
 
-.about h2 {
-  color: red;
-  background: url("../images/cornerBorder.png") no-repeat;
-  width: 278px;
-  height: 122px;
-  font-size: 40pt;
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+body {
+  color: $greyFont;
+  background-color: $white;
+  font-size: 16px;
+  font-family: $latoReg;
   text-align: center;
-  padding-top: 30px;
+}
+
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ============ HEADER STYLES ============== */
+
+.header {
+  background: url("../images/hero.jpg") no-repeat center;
+  background-size: cover;
+  padding-bottom: 5%;
+}
+
+.main-header {
+  color: $white;
+  h1 {
+    font-family: $existence;
+    font-size: 4rem;
+    font-weight: 600;
+    padding: 4rem 0;
+    span {
+      color: $purple;
+    }
+  }
+  h2 {
+    font-family: $latoHair;
+    font-size: 2.5rem;
+    font-weight: 600;
+    padding: 1.2rem;
+  }
+  p {
+    font-weight: 100;
+    font-family: $latoHair;
+    font-size: 1.4rem;
+  }
+}
+
+.header-nav {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  .border {
+    background: url("../images/sixBorderShape.png") no-repeat;
+    background-size: cover;
+    display: inline-block;
+    height: 165px;
+    transition: .1s;
+    width: 150px;
+    &:hover {
+      background: url("../images/sixBorderShapePurple.png") no-repeat;
+      background-size: cover;
+      transition: .1s;
+    }
+    img {
+      margin-top: 30px;
+    }
+  }
+  & > div {
+    margin: 20px 0;
+  }
+  .header-nav-first {
+    width: 100%;
+  }
+
+  .header-nav-second {
+    width: 100%;
+    & > div:nth-child(2) {
+      margin-right: 30%;
+    }
+  }
+  .arrow-down {
+    display: inline-block;
+
+    img:hover {
+      background: url("../images/sixBorderShapePurple.png") no-repeat 4px -2px;
+      background-size: contain;
+    }
+  }
+}
+
+
+/* ============ NAVIGATION STYLES ============== */
+
+.navigation {
+  box-shadow: 0 2px 10px -5px $black;
+  padding: 1% 0;
+  .wrapper {
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.logo {
+  font-family: $existence;
+  font-size: 1.5rem;
+  font-weight: 600;
+  align-self: center;
+  span {
+    color: $purple;
+  }
+}
+
+.main-nav {
+  ul {
+    display: inline-block;
+    li {
+      display: inline-block;
+      a {
+        display: block;
+        padding: 20px 10px;
+        &:hover {
+          color: $purple;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+/* ============ NAVIGATION STYLES ============== */
+
+.feature {
+  background-color: $greyBg;
+  padding: 150px 0;
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .feature-item {
+      margin: 0 2%;
+      &:nth-child(1){
+        margin-left: 0;
+      }
+      &:nth-child(4) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.feature-icon {
+  width: 85%;
+  height: 190px;
+  margin: 0 auto;
+}
+
+.feature-icon-hearth {
+  @include featureSpriteDisplay(0, 0);
+  &:hover {
+    @include featureSpriteDisplay(0, -190px)
+  }
+}
+
+.feature-icon-diamond {
+  @include featureSpriteDisplay(-180px, 0);
+  &:hover {
+    @include featureSpriteDisplay(-180px, -190px)
+  }
+}
+
+.feature-icon-mug {
+  @include featureSpriteDisplay(-360px, 0);
+  &:hover {
+    @include featureSpriteDisplay(-360px, -190px)
+  }
+}
+
+.feature-icon-phone {
+  @include featureSpriteDisplay(-540px, 0);
+  &:hover {
+    @include featureSpriteDisplay(-535px, -190px)
+  }
+}
+
+.feature-item {
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 15% 0;
+  }
+  p {
+    font-size: .9rem;
+    line-height: 1.7;
+  }
+}
+
+
+/* ============ ABOUT STYLES ============== */
+
+
+.about {
+  padding: 150px 0 200px 0;
+}
+
+@include cornerBorderOnHeadline;
+
+
+.about-container {
+  display: flex;
+  flex-direction: row;
+  img {
+    width: 60%;
+    height: 80%;
+  }
+  .about-text {
+    text-align: left;
+    position: relative;
+    margin-left: 2%;
+    p {
+      font-size: .8rem;
+      line-height: 2.5;
+    }
+    a {
+      @include mainBtn;
+    }
+  }
+}
+
+
+/* ============ QUOTE STYLES ============== */
+
+.quote {
+  background: url("../images/middleSectionBgImage.jpg") fixed;
+  background-size: cover;
+  padding: 150px 0;
+  h3 {
+    color: $white;
+    font-size: 2.2rem;
+    margin-top: 5%;
+  }
+}
+
+/* ============ ABOUT STYLES ============== */
+
+.arrows-nav {
+  margin: 10% 0;
+  img {
+    transition: .1s;
+  }
+  & img:nth-child(1):hover {
+    transform: scale(.9);
+    transition: .1s;
+  }
+  & img:nth-child(2):hover {
+    transform: scale(.9);
+    transition: .1s;
+  }
+}
+
+.team-content {
+  display: flex;
+  flex-direction: row;
 }

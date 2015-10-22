@@ -3,16 +3,23 @@
  */
 $(function(){
 
-console.log("dziala")
+    var Application = function(){
+        function init(){
+            console.log("init");
+        }
 
+        function scrollPage(){
+            console.log("scrolling");
+        }
 
+        return {
+            init:init
+        }
+    };
 
-
-
-
-
-
-
+    var app = new Application();
+    app.init();
+    app.scrollPage();
 
 
     //the end of DOM LOADED function

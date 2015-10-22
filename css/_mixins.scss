@@ -1,0 +1,47 @@
+@mixin headlineTwo (){
+
+}
+
+
+@mixin featureSpriteDisplay($positionX, $positionY) {
+  background: url("../images/iconsSprite.png") no-repeat $positionX $positionY;
+}
+
+@mixin cornerBorderOnHeadline {
+  .border-headline-width {
+    margin: 50px 0;
+    width: 100%;
+  }
+
+  .border-headline {
+    background: url("../images/cornerBorder.png") no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+    width: 30%;
+    h2{
+      font: $existence;
+      font-size: 2rem;
+      padding: 15%;
+      span {
+        color: $purple;
+      }
+    }
+  }
+}
+
+
+@mixin mainBtn {
+    position: absolute;
+    bottom: 0;
+    color: $white;
+    padding: 20px 50px;
+    background: $purple;
+    border-radius: 5px;
+    box-shadow: 0 4px 0 0 $darkPurple;
+  transition: .1s;
+    &:hover {
+      box-shadow: none;
+      bottom: -4px;
+      transition: .1s;
+    }
+  }

@@ -5,7 +5,6 @@
     <title>Bhagaskara</title>
     <meta name="description" content="My webite created during Coder's Lab workshop.">
     <meta name="keywords" content="project, photoshop, HTML, CSS, javaScript, jQuery, sass">
-    <link href="css/reset.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="js/jquery-2.1.4.js" type="text/javascript"></script>
     <script src="js/app.js" type="text/javascript"></script>
@@ -23,10 +22,31 @@
             </div>
 
             <div class="header-nav">
-                <div class="header-nav-first"></div>
-                <div class="header-nav-second"></div>
-                <div class="header-nav-third"></div>
-                <div class="arrow-down"></div>
+                <div class="header-nav-first">
+                    <div class="border">
+                        <img src="images/servicesIcon.png">
+                    </div>
+                    <div class="border">
+                        <img src="images/portfolioIcon.png">
+                    </div>
+                </div>
+                <div class="header-nav-second">
+                    <div class="border">
+                        <img src="images/aboutIcon.png">
+                    </div>
+                    <div class="border">
+                        <img src="images/teamIcon.png">
+                    </div>
+                    <div class="border">
+                        <img src="images/blogIcon.png">
+                    </div>
+                    <div class="border">
+                        <img src="images/contactIcon.png">
+                    </div>
+                </div>
+                <div class="arrow-down">
+                    <img src="images/downArrowIcon.png">
+                </div>
             </div>
 
         </div>
@@ -38,13 +58,13 @@
             <p class="logo">Bhagas<span>kara</span>.</p>
             <div class="main-nav">
                 <ul>
-                    <li>HOME</li>
-                    <li>ABOUT</li>
-                    <li>TEAM</li>
-                    <li>SERVICES</li>
-                    <li>PORTFOLIO</li>
-                    <li>BLOG</li>
-                    <li>CONTACT</li>
+                    <li><a>HOME</a></li>
+                    <li><a>ABOUT</a></li>
+                    <li><a>TEAM</a></li>
+                    <li><a>SERVICES</a></li>
+                    <li><a>PORTFOLIO</a></li>
+                    <li><a>BLOG</a></li>
+                    <li><a>CONTACT</a></li>
                 </ul>
             </div>
 
@@ -55,23 +75,23 @@
         <div class="wrapper">
 
             <div class="feature-item">
-                <div class="feature-icon"></div>
+                <div class="feature-icon feature-icon-hearth"></div>
                 <h4>Build with love</h4>
                 <p>Fusce facilisis velit libero, nec dignissim lacus sagittis non. Sed nec porta ante. Pellentesque habitant morbi tristique senectus et.</p>
             </div>
             <div class="feature-item">
-                <div class="feature-icon"></div>
-                <h4>Build with love</h4>
+                <div class="feature-icon feature-icon-diamond"></div>
+                <h4>Clean and modern</h4>
                 <p>Fusce facilisis velit libero, nec dignissim lacus sagittis non. Sed nec porta ante. Pellentesque habitant morbi tristique senectus et.</p>
             </div>
             <div class="feature-item">
-                <div class="feature-icon"></div>
-                <h4>Build with love</h4>
+                <div class="feature-icon feature-icon-mug"></div>
+                <h4>Easy to use</h4>
                 <p>Fusce facilisis velit libero, nec dignissim lacus sagittis non. Sed nec porta ante. Pellentesque habitant morbi tristique senectus et.</p>
             </div>
             <div class="feature-item">
-                <div class="feature-icon"></div>
-                <h4>Build with love</h4>
+                <div class="feature-icon feature-icon-phone"></div>
+                <h4>Fully responsive</h4>
                 <p>Fusce facilisis velit libero, nec dignissim lacus sagittis non. Sed nec porta ante. Pellentesque habitant morbi tristique senectus et.</p>
             </div>
 
@@ -81,14 +101,17 @@
     <section class="about">
         <div class="wrapper">
 
-            <div class="border-headline">
-                <h2>About <span>us</span></h2>
+            <div class="border-headline-width">
+                <div class="border-headline">
+                    <h2>About <span>us</span></h2>
+                </div>
             </div>
+
             <div class="about-container">
                 <img src="images/devicesImage.png">
-                <div>
+                <div class="about-text">
                     <p>Aliquam metus neque, bibendum sit amet porta at, consequat et enim. In ut turpis non ipsum rhoncus porttitor vel ac nunc. Maecenas interdum dignissim lorem quis auctor. Donec sit amet nulla nisl, aliquam pretium ipsum. Pellentesque sodales ipsum et enim rutrum adipiscing. Quisque tincidunt mattis sapien,vel posuere.</p>
-                    <a class="btn btn-learnMore">Learn more</a>
+                    <a class="btn btn-learnMore" href="#">Learn more</a>
                 </div>
             </div>
 
@@ -98,7 +121,9 @@
     <section class="quote">
         <div class="wrapper">
 
-            <div class="quote-icon"></div>
+            <div class="quote-icon">
+                <img src="images/hatIcon.png">
+            </div>
             <h3>We lorem and ipsum your aliquam</h3>
 
         </div>
@@ -107,12 +132,16 @@
     <section class="team">
         <div class="wrapper">
 
-            <div class="border-headline">
-                <h2>Our <span>team</span></h2>
+            <div class="border-headline-width">
+                <div class="border-headline">
+                    <h2>Our <span>team</span></h2>
+                </div>
             </div>
 
-            <div class="left-arrow"></div>
-            <div class="right-arrow"></div>
+            <div class="arrows-nav">
+                    <img src="images/leftArrowIconPurple.png">
+                    <img src="images/rightArrowIconPurple.png">
+            </div>
 
             <div class="team-content">
                 <div class="team-member">
@@ -144,8 +173,10 @@
                 </div>
             </div>
 
-            <div class="border-headline">
-                <h2>Our <span>skills</span></h2>
+            <div class="border-headline-width">
+                <div class="border-headline">
+                    <h2>Our <span>skills</span></h2>
+                </div>
             </div>
             <div class="skills-content">
                 <div class="skills-left">
@@ -236,8 +267,10 @@
     <section class="portfolio">
         <div class="wrapper">
 
-            <div class="border-headline">
-                <h2>Our <span>portfolio</span></h2>
+            <div class="border-headline-width">
+                <div class="border-headline">
+                    <h2>Our <span>portfolio</span></h2>
+                </div>
             </div>
             <div class="filter-buttons">
                 <a class="btn btn-filter">all</a>
@@ -285,8 +318,10 @@
     <footer class="footer">
         <div class="wrapper">
 
-            <div class="border-headline">
-                <h2>Our <span>team</span></h2>
+            <div class="border-headline-width">
+                <div class="border-headline">
+                    <h2>Our <span>team</span></h2>
+                </div>
             </div>
             <div class="contact-content">
                 <div class="contact-form">

@@ -1,13 +1,295 @@
-* {
-  margin: 0; }
+/* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+  License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
 
-.about h2 {
-  color: red;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: 'existencelight';
+  src: url("../fonts/existence-light.eot");
+  src: url("../fonts/existence-light.eot?#iefix") format("embedded-opentype"), url("../fonts/existence-light.woff2") format("woff2"), url("../fonts/existence-light.woff") format("woff"), url("../fonts/existence-light.ttf") format("truetype"), url("../fonts/existence-light.svg#existencelight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'latohairline';
+  src: url("../fonts/lato-hairline.eot");
+  src: url("../fonts/lato-hairline.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-hairline.woff2") format("woff2"), url("../fonts/lato-hairline.woff") format("woff"), url("../fonts/lato-hairline.ttf") format("truetype"), url("../fonts/lato-hairline.svg#latohairline") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'latoregular';
+  src: url("../fonts/lato-regular.eot");
+  src: url("../fonts/lato-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-regular.woff2") format("woff2"), url("../fonts/lato-regular.woff") format("woff"), url("../fonts/lato-regular.ttf") format("truetype"), url("../fonts/lato-regular.svg#latoregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* ============ GENERAL STYLES ============== */
+* {
+  box-sizing: border-box; }
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%; }
+
+body {
+  color: #676767;
+  background-color: #fff;
+  font-size: 16px;
+  font-family: "latoregular", sans-serif;
+  text-align: center; }
+
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both; }
+
+a {
+  text-decoration: none; }
+
+/* ============ HEADER STYLES ============== */
+.header {
+  background: url("../images/hero.jpg") no-repeat center;
+  background-size: cover;
+  padding-bottom: 5%; }
+
+.main-header {
+  color: #fff; }
+  .main-header h1 {
+    font-family: "existencelight", sans-serif;
+    font-size: 4rem;
+    font-weight: 600;
+    padding: 4rem 0; }
+    .main-header h1 span {
+      color: #9F449B; }
+  .main-header h2 {
+    font-family: "latohairline", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    padding: 1.2rem; }
+  .main-header p {
+    font-weight: 100;
+    font-family: "latohairline", sans-serif;
+    font-size: 1.4rem; }
+
+.header-nav {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column; }
+  .header-nav .border {
+    background: url("../images/sixBorderShape.png") no-repeat;
+    background-size: cover;
+    display: inline-block;
+    height: 165px;
+    transition: .1s;
+    width: 150px; }
+    .header-nav .border:hover {
+      background: url("../images/sixBorderShapePurple.png") no-repeat;
+      background-size: cover;
+      transition: .1s; }
+    .header-nav .border img {
+      margin-top: 30px; }
+  .header-nav > div {
+    margin: 20px 0; }
+  .header-nav .header-nav-first {
+    width: 100%; }
+  .header-nav .header-nav-second {
+    width: 100%; }
+    .header-nav .header-nav-second > div:nth-child(2) {
+      margin-right: 30%; }
+  .header-nav .arrow-down {
+    display: inline-block; }
+    .header-nav .arrow-down img:hover {
+      background: url("../images/sixBorderShapePurple.png") no-repeat 4px -2px;
+      background-size: contain; }
+
+/* ============ NAVIGATION STYLES ============== */
+.navigation {
+  box-shadow: 0 2px 10px -5px #000;
+  padding: 1% 0; }
+  .navigation .wrapper {
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+
+.logo {
+  font-family: "existencelight", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  align-self: center; }
+  .logo span {
+    color: #9F449B; }
+
+.main-nav ul {
+  display: inline-block; }
+  .main-nav ul li {
+    display: inline-block; }
+    .main-nav ul li a {
+      display: block;
+      padding: 20px 10px; }
+      .main-nav ul li a:hover {
+        color: #9F449B;
+        font-weight: 600; }
+
+/* ============ NAVIGATION STYLES ============== */
+.feature {
+  background-color: #EEEEEE;
+  padding: 150px 0; }
+  .feature .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+    .feature .wrapper .feature-item {
+      margin: 0 2%; }
+      .feature .wrapper .feature-item:nth-child(1) {
+        margin-left: 0; }
+      .feature .wrapper .feature-item:nth-child(4) {
+        margin-right: 0; }
+
+.feature-icon {
+  width: 85%;
+  height: 190px;
+  margin: 0 auto; }
+
+.feature-icon-hearth {
+  background: url("../images/iconsSprite.png") no-repeat 0 0; }
+  .feature-icon-hearth:hover {
+    background: url("../images/iconsSprite.png") no-repeat 0 -190px; }
+
+.feature-icon-diamond {
+  background: url("../images/iconsSprite.png") no-repeat -180px 0; }
+  .feature-icon-diamond:hover {
+    background: url("../images/iconsSprite.png") no-repeat -180px -190px; }
+
+.feature-icon-mug {
+  background: url("../images/iconsSprite.png") no-repeat -360px 0; }
+  .feature-icon-mug:hover {
+    background: url("../images/iconsSprite.png") no-repeat -360px -190px; }
+
+.feature-icon-phone {
+  background: url("../images/iconsSprite.png") no-repeat -540px 0; }
+  .feature-icon-phone:hover {
+    background: url("../images/iconsSprite.png") no-repeat -535px -190px; }
+
+.feature-item h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 15% 0; }
+.feature-item p {
+  font-size: .9rem;
+  line-height: 1.7; }
+
+/* ============ ABOUT STYLES ============== */
+.about {
+  padding: 150px 0 200px 0; }
+
+.border-headline-width {
+  margin: 50px 0;
+  width: 100%; }
+
+.border-headline {
   background: url("../images/cornerBorder.png") no-repeat;
-  width: 278px;
-  height: 122px;
-  font-size: 40pt;
-  text-align: center;
-  padding-top: 30px; }
+  background-size: contain;
+  margin: 0 auto;
+  width: 30%; }
+  .border-headline h2 {
+    font: "existencelight", sans-serif;
+    font-size: 2rem;
+    padding: 15%; }
+    .border-headline h2 span {
+      color: #9F449B; }
+
+.about-container {
+  display: flex;
+  flex-direction: row; }
+  .about-container img {
+    width: 60%;
+    height: 80%; }
+  .about-container .about-text {
+    text-align: left;
+    position: relative;
+    margin-left: 2%; }
+    .about-container .about-text p {
+      font-size: .8rem;
+      line-height: 2.5; }
+    .about-container .about-text a {
+      position: absolute;
+      bottom: 0;
+      color: #fff;
+      padding: 20px 50px;
+      background: #9F449B;
+      border-radius: 5px;
+      box-shadow: 0 4px 0 0 #6B2E68;
+      transition: .1s; }
+      .about-container .about-text a:hover {
+        box-shadow: none;
+        bottom: -4px;
+        transition: .1s; }
+
+/* ============ QUOTE STYLES ============== */
+.quote {
+  background: url("../images/middleSectionBgImage.jpg") fixed;
+  background-size: cover;
+  padding: 150px 0; }
+  .quote h3 {
+    color: #fff;
+    font-size: 2.2rem;
+    margin-top: 5%; }
+
+/* ============ ABOUT STYLES ============== */
+.arrows-nav {
+  margin: 10% 0; }
+  .arrows-nav img {
+    transition: .1s; }
+  .arrows-nav img:nth-child(1):hover {
+    transform: scale(0.9);
+    transition: .1s; }
+  .arrows-nav img:nth-child(2):hover {
+    transform: scale(0.9);
+    transition: .1s; }
+
+.team-content {
+  display: flex;
+  flex-direction: row; }
 
 /*# sourceMappingURL=style.css.map */
