@@ -149,7 +149,7 @@ a {
   }
 }
 
-/* ============ NAVIGATION STYLES ============== */
+/* ============ FEATURE STYLES ============== */
 
 .feature {
   background-color: $greyBg;
@@ -262,7 +262,7 @@ a {
   }
 }
 
-/* ============ ABOUT STYLES ============== */
+/* ============ TEAM STYLES ============== */
 
 .arrows-nav {
   margin: 10% 0;
@@ -282,4 +282,221 @@ a {
 .team-content {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  .team-member {
+    width: 33%;
+    .team-member-img {
+      @include circleImage;
+    }
+  h4 {
+    color: $lightBlackFont;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  p {
+    font-size: .7rem;
+    line-height: 2;
+    margin: 4% 0;
+  }
+  .social-icons > div {
+    border: 1px solid $greyFont;
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 1.2rem;
+    height: 38px;
+    margin: 0 10px  ;
+    padding-top: 6px;
+    width: 38px;
+    transition: .2s;
+  }
+  .fb-icon:hover {
+    @include socialIcon($fbColor);
+  }
+  .g-icon:hover {
+    @include socialIcon($googleColor);
+  }
+  }
+}
+
+.skills-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 100px 0;
+  & > div {
+    width: 45%;
+  }
+}
+
+.skill-box {
+  padding: 20px 0;
+  .skill-text p {
+    display: inline-block;
+    &:first-child {
+      color: $black;
+      float: left;
+      font-weight: bolder;
+      text-transform: uppercase;
+    }
+    &:last-child {
+      float: right;
+    }
+  }
+  .skill-bar {
+    background-color: $lightGreyBg;
+    height: 20px;
+    margin-top: 20px;
+    width: 100%;
+    .skill-bar-filled {
+      background-color: $purple;
+      height: 100%;
+    }
+    .bar-web-design {
+      width: 90%;
+    }
+    .bar-html {
+      width: 75%;
+    }
+    .bar-graphic-design {
+      width: 70%;
+    }
+    .bar-ui {
+      width: 85%;
+    }
+  }
+}
+
+
+
+/* ============ SERVICE STYLES ============== */
+
+.service {
+  @extend .quote;
+}
+
+
+
+/* ============ TESTIMONIALS STYLES ============== */
+
+.testimonials {
+  background-color: $greyBg;
+  padding: 100px 0;
+  .statistics-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px 0;
+    .statistic p:first-child {
+      color: $black;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.testimonials-container {
+  margin-top: 100px;
+  .testimonials-img {
+    @include circleImage;
+  }
+   p:first-of-type {
+     font-size: 2rem;
+     margin: 0 auto;
+     width: 90%;
+  }
+  p:last-of-type {
+    font-weight: bolder;
+    margin: 30px 0;
+    text-transform: uppercase;
+  }
+}
+
+
+/* ============ PORTFOLIO STYLES ============== */
+
+.portfolio {
+  background-color: $white;
+   h2 {
+     font-size: 2.5rem;
+     padding: 17% 0;
+   }
+}
+
+.filter-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px 0 40px;
+  .btn {
+    border: 1px solid black;
+    border-radius: 3px;
+    color: $black;
+    margin: 0 10px;
+    padding: 7px 15px;
+    text-transform: uppercase;
+    transition: .2s;
+    &:hover {
+      background: $purple;
+      border: 1px solid $purple;
+      color: $white;
+      transition: .2s;
+    }
+  }
+}
+
+.gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  position: relative;
+   figure {
+     width: 30%;
+     margin: 4% 1%;
+     .image-container {
+       background: url("../images/hoverImg.png");
+       background-size: contain;
+     }
+      img {
+        width: 100%;
+        transition: .4s;
+        &:hover {
+          opacity: 0.5;
+          transition: .4s;
+        }
+      }
+     figcaption {
+       color: $black;
+       font-size: 1.2rem;
+       margin: 3% 0;
+     }
+   }
+}
+
+.button-line {
+  position: relative;
+  display: block;
+  height: 100px;
+  width: 100%;
+}
+
+.btn-watchMore {
+  @include mainBtn;
+  left: 40%;
+}
+
+
+/* ============ FOOTER STYLES ============== */
+
+.footer {
+  margin: 100px 0;
+  .border-headline {
+    background-color: $white;
+    h2 {
+      font-size: 2.5rem;
+      padding: 17% 0;
+    }
+  }
 }

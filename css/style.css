@@ -171,7 +171,7 @@ a {
         color: #9F449B;
         font-weight: 600; }
 
-/* ============ NAVIGATION STYLES ============== */
+/* ============ FEATURE STYLES ============== */
 .feature {
   background-color: #EEEEEE;
   padding: 150px 0; }
@@ -233,9 +233,10 @@ a {
   margin: 0 auto;
   width: 30%; }
   .border-headline h2 {
-    font: "existencelight", sans-serif;
-    font-size: 2rem;
-    padding: 15%; }
+    font-family: 'existencelight', sans-serif;
+    font-weight: bolder;
+    font-size: 2.5rem;
+    padding: 17%; }
     .border-headline h2 span {
       color: #9F449B; }
 
@@ -267,16 +268,16 @@ a {
         transition: .1s; }
 
 /* ============ QUOTE STYLES ============== */
-.quote {
+.quote, .service {
   background: url("../images/middleSectionBgImage.jpg") fixed;
   background-size: cover;
   padding: 150px 0; }
-  .quote h3 {
+  .quote h3, .service h3 {
     color: #fff;
     font-size: 2.2rem;
     margin-top: 5%; }
 
-/* ============ ABOUT STYLES ============== */
+/* ============ TEAM STYLES ============== */
 .arrows-nav {
   margin: 10% 0; }
   .arrows-nav img {
@@ -290,6 +291,192 @@ a {
 
 .team-content {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 100px; }
+  .team-content .team-member {
+    width: 33%; }
+    .team-content .team-member .team-member-img {
+      background-color: #CDCDCD;
+      border-radius: 50%;
+      height: 150px;
+      margin: 0 auto 50px;
+      width: 150px; }
+    .team-content .team-member h4 {
+      color: #484848;
+      font-weight: bold;
+      text-transform: uppercase; }
+    .team-content .team-member p {
+      font-size: .7rem;
+      line-height: 2;
+      margin: 4% 0; }
+    .team-content .team-member .social-icons > div {
+      border: 1px solid #676767;
+      border-radius: 50%;
+      display: inline-block;
+      font-size: 1.2rem;
+      height: 38px;
+      margin: 0 10px;
+      padding-top: 6px;
+      width: 38px;
+      transition: .2s; }
+    .team-content .team-member .fb-icon:hover {
+      background-color: #3b5998;
+      border: 1px solid #3b5998;
+      color: #fff;
+      transition: .2s; }
+    .team-content .team-member .g-icon:hover {
+      background-color: #dd4b39;
+      border: 1px solid #dd4b39;
+      color: #fff;
+      transition: .2s; }
+
+.skills-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 100px 0; }
+  .skills-content > div {
+    width: 45%; }
+
+.skill-box {
+  padding: 20px 0; }
+  .skill-box .skill-text p {
+    display: inline-block; }
+    .skill-box .skill-text p:first-child {
+      color: #000;
+      float: left;
+      font-weight: bolder;
+      text-transform: uppercase; }
+    .skill-box .skill-text p:last-child {
+      float: right; }
+  .skill-box .skill-bar {
+    background-color: #F0F0F0;
+    height: 20px;
+    margin-top: 20px;
+    width: 100%; }
+    .skill-box .skill-bar .skill-bar-filled {
+      background-color: #9F449B;
+      height: 100%; }
+    .skill-box .skill-bar .bar-web-design {
+      width: 90%; }
+    .skill-box .skill-bar .bar-html {
+      width: 75%; }
+    .skill-box .skill-bar .bar-graphic-design {
+      width: 70%; }
+    .skill-box .skill-bar .bar-ui {
+      width: 85%; }
+
+/* ============ SERVICE STYLES ============== */
+/* ============ TESTIMONIALS STYLES ============== */
+.testimonials {
+  background-color: #EEEEEE;
+  padding: 100px 0; }
+  .testimonials .statistics-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px 0; }
+    .testimonials .statistics-container .statistic p:first-child {
+      color: #000;
+      font-size: 2.5rem;
+      margin-bottom: 10px; }
+
+.testimonials-container {
+  margin-top: 100px; }
+  .testimonials-container .testimonials-img {
+    background-color: #CDCDCD;
+    border-radius: 50%;
+    height: 150px;
+    margin: 0 auto 50px;
+    width: 150px; }
+  .testimonials-container p:first-of-type {
+    font-size: 2rem;
+    margin: 0 auto;
+    width: 90%; }
+  .testimonials-container p:last-of-type {
+    font-weight: bolder;
+    margin: 30px 0;
+    text-transform: uppercase; }
+
+/* ============ PORTFOLIO STYLES ============== */
+.portfolio {
+  background-color: #fff; }
+  .portfolio h2 {
+    font-size: 2.5rem;
+    padding: 17% 0; }
+
+.filter-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px 0 40px; }
+  .filter-buttons .btn {
+    border: 1px solid black;
+    border-radius: 3px;
+    color: #000;
+    margin: 0 10px;
+    padding: 7px 15px;
+    text-transform: uppercase;
+    transition: .2s; }
+    .filter-buttons .btn:hover {
+      background: #9F449B;
+      border: 1px solid #9F449B;
+      color: #fff;
+      transition: .2s; }
+
+.gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  position: relative; }
+  .gallery figure {
+    width: 30%;
+    margin: 4% 1%; }
+    .gallery figure .image-container {
+      background: url("../images/hoverImg.png");
+      background-size: contain; }
+    .gallery figure img {
+      width: 100%;
+      transition: .4s; }
+      .gallery figure img:hover {
+        opacity: 0.5;
+        transition: .4s; }
+    .gallery figure figcaption {
+      color: #000;
+      font-size: 1.2rem;
+      margin: 3% 0; }
+
+.button-line {
+  position: relative;
+  display: block;
+  height: 100px;
+  width: 100%; }
+
+.btn-watchMore {
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  padding: 20px 50px;
+  background: #9F449B;
+  border-radius: 5px;
+  box-shadow: 0 4px 0 0 #6B2E68;
+  transition: .1s;
+  left: 40%; }
+  .btn-watchMore:hover {
+    box-shadow: none;
+    bottom: -4px;
+    transition: .1s; }
+
+/* ============ FOOTER STYLES ============== */
+.footer {
+  margin: 100px 0; }
+  .footer .border-headline {
+    background-color: #fff; }
+    .footer .border-headline h2 {
+      font-size: 2.5rem;
+      padding: 17% 0; }
 
 /*# sourceMappingURL=style.css.map */

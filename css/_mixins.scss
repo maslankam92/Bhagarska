@@ -19,9 +19,10 @@
     margin: 0 auto;
     width: 30%;
     h2{
-      font: $existence;
-      font-size: 2rem;
-      padding: 15%;
+      font-family: 'existencelight', sans-serif;
+      font-weight: bolder;
+      font-size: 2.5rem;
+      padding: 17%;
       span {
         color: $purple;
       }
@@ -45,3 +46,19 @@
       transition: .1s;
     }
   }
+
+
+@mixin socialIcon($socialColor) {
+  background-color: $socialColor;
+  border: 1px solid $socialColor;
+  color: $white;
+  transition: .2s;
+}
+
+@mixin circleImage {
+  background-color: $darkGrey;
+  border-radius: 50%;
+  height: 150px;
+  margin: 0 auto 50px;
+  width: 150px;
+}
