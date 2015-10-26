@@ -19,7 +19,22 @@ $(function(){
 
     var app = new Application();
     app.init();
-    app.scrollPage();
+
+
+    var links = $(".header-nav a, .main-nav a, .last-logo a");
+    console.log(links);
+
+    links.click(function(){
+        $("html, body").animate({
+            scrollTop: $($(this).attr("href")).offset().top
+        }, 1000, 'swing');
+        return false;
+    });
+
+
+
+
+
 
 
     //the end of DOM LOADED function
