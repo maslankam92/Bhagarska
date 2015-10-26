@@ -84,7 +84,8 @@ body {
   clear: both; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: inherit; }
 
 /* ============ HEADER STYLES ============== */
 .header {
@@ -152,12 +153,12 @@ a {
     flex-direction: row;
     justify-content: space-between; }
 
-.logo {
+.logo, .footer .last-logo {
   font-family: "existencelight", sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
   align-self: center; }
-  .logo span {
+  .logo span, .footer .last-logo span {
     color: #9F449B; }
 
 .main-nav ul {
@@ -472,11 +473,87 @@ a {
 
 /* ============ FOOTER STYLES ============== */
 .footer {
-  margin: 100px 0; }
+  margin-top: 100px; }
   .footer .border-headline {
-    background-color: #fff; }
+    background-color: #fff;
+    margin-bottom: 100px; }
     .footer .border-headline h2 {
       font-size: 2.5rem;
       padding: 17% 0; }
+  .footer .last-logo {
+    font-size: 2.5rem;
+    padding: 100px 0; }
+
+.contact-content {
+  color: #000;
+  display: flex;
+  flex-direction: row; }
+  .contact-content .contact-form {
+    padding-right: 5%;
+    position: relative;
+    width: 55%; }
+    .contact-content .contact-form > *:not(a) {
+      display: block;
+      font-family: "latoregular", sans-serif;
+      font-size: 1.5rem;
+      padding: 20px;
+      width: 100%; }
+    .contact-content .contact-form input:last-of-type {
+      margin: 20px 0; }
+    .contact-content .contact-form .btn-sendEmail {
+      position: absolute;
+      bottom: 0;
+      color: #fff;
+      padding: 20px 50px;
+      background: #9F449B;
+      border-radius: 5px;
+      box-shadow: 0 4px 0 0 #6B2E68;
+      transition: .1s;
+      font-size: initial;
+      left: 0; }
+      .contact-content .contact-form .btn-sendEmail:hover {
+        box-shadow: none;
+        bottom: -4px;
+        transition: .1s; }
+  .contact-content .contact-text {
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    width: 45%;
+    position: relative; }
+    .contact-content .contact-text p:nth-of-type(2), .contact-content .contact-text p:nth-of-type(3) {
+      font-weight: bolder;
+      margin-top: 30px; }
+  .contact-content .social-icons {
+    bottom: 100px;
+    position: absolute; }
+    .contact-content .social-icons > div {
+      display: inline-block; }
+      .contact-content .social-icons > div > a {
+        border: 1px solid #676767;
+        border-radius: 50%;
+        display: block;
+        font-size: 1.2rem;
+        height: 38px;
+        margin: 0 10px;
+        padding-top: 5px;
+        text-align: center;
+        transition: .2s;
+        width: 38px; }
+    .contact-content .social-icons .fb-icon:hover a {
+      background-color: #3b5998;
+      border: 1px solid #3b5998;
+      color: #fff;
+      transition: .2s; }
+    .contact-content .social-icons .g-icon:hover a {
+      background-color: #dd4b39;
+      border: 1px solid #dd4b39;
+      color: #fff;
+      transition: .2s; }
+    .contact-content .social-icons .tw-icon:hover a {
+      background-color: #00aced;
+      border: 1px solid #00aced;
+      color: #fff;
+      transition: .2s; }
 
 /*# sourceMappingURL=style.css.map */

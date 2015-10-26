@@ -31,6 +31,7 @@ body {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 /* ============ HEADER STYLES ============== */
@@ -491,12 +492,86 @@ a {
 /* ============ FOOTER STYLES ============== */
 
 .footer {
-  margin: 100px 0;
+  margin-top: 100px;
   .border-headline {
     background-color: $white;
+    margin-bottom: 100px;
     h2 {
       font-size: 2.5rem;
       padding: 17% 0;
     }
   }
+  .last-logo {
+    @extend .logo;
+    font-size: 2.5rem;
+    padding: 100px 0;
+  }
 }
+
+.contact-content {
+  color: $black;
+  display: flex;
+  flex-direction: row;
+  .contact-form {
+    padding-right: 5%;
+    position: relative;
+    width: 55%;
+    & > *:not(a) {
+
+      display: block;
+      font-family: $latoReg;
+      font-size: 1.5rem;
+      padding: 20px;
+      width: 100%;
+    }
+    & input:last-of-type {
+      margin: 20px 0;
+    }
+    .btn-sendEmail {
+       @include mainBtn;
+       font-size: initial;
+       left: 0;
+     }
+  }
+  .contact-text {
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    width: 45%;
+    position: relative;
+    & p:nth-of-type(2),
+    & p:nth-of-type(3) {
+      font-weight: bolder;
+      margin-top: 30px;
+    }
+  }
+  .social-icons {
+    bottom: 100px;
+    position: absolute;
+    & > div {
+      display: inline-block;
+      & > a {
+        border: 1px solid $greyFont;
+        border-radius: 50%;
+        display: block;
+        font-size: 1.2rem;
+        height: 38px;
+        margin: 0 10px  ;
+        padding-top: 5px;
+        text-align: center;
+        transition: .2s;
+        width: 38px;
+      }
+    }
+    .fb-icon:hover a{
+      @include socialIcon($fbColor);
+    }
+    .g-icon:hover a{
+      @include socialIcon($googleColor);
+    }
+    .tw-icon:hover a{
+      @include socialIcon($twitterColor);
+    }
+  }
+}
+
