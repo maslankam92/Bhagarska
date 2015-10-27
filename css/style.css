@@ -87,6 +87,18 @@ a {
   text-decoration: none;
   color: inherit; }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: white; }
+
+.active {
+  color: #9F449B;
+  font-weight: 600; }
+
 /* ============ HEADER STYLES ============== */
 .header {
   background: url("../images/hero.jpg") no-repeat center;
@@ -222,7 +234,7 @@ a {
 
 /* ============ ABOUT STYLES ============== */
 .about {
-  padding: 150px 0 200px 0; }
+  padding: 50px 0 150px 0; }
 
 .border-headline-width {
   margin: 50px 0;
@@ -438,7 +450,7 @@ a {
     margin: 4% 1%; }
     .gallery figure .image-container {
       background: url("../images/hoverImg.png");
-      background-size: contain; }
+      background-size: cover; }
     .gallery figure img {
       width: 100%;
       transition: .4s; }

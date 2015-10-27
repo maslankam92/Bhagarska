@@ -34,6 +34,20 @@ a {
   color: inherit;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: white;
+}
+
+.active {
+  color: $purple;
+  font-weight: 600;
+}
+
 /* ============ HEADER STYLES ============== */
 
 .header {
@@ -222,7 +236,7 @@ a {
 
 
 .about {
-  padding: 150px 0 200px 0;
+  padding: 50px 0 150px 0;
 }
 
 @include cornerBorderOnHeadline;
@@ -458,7 +472,7 @@ a {
      margin: 4% 1%;
      .image-container {
        background: url("../images/hoverImg.png");
-       background-size: contain;
+       background-size: cover;
      }
       img {
         width: 100%;
