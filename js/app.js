@@ -73,44 +73,44 @@ $(function(){
         //}
 
 
-        var images = $(".team-content > div");
-        var visibleImage = 0;
-        images.eq(visibleImage).show();
-
-
-        images.click(function(event){
-            images.eq(visibleImage).css("opacity", ".5"));
-            if(event.offsetX < $(this).width()/2){
-                visibleImage--;
-            }
-            else {
-                visibleImage++;
-            }
-
-            if(visibleImage >= images.length){
-                visibleImage = 0;
-            }
-
-            if(visibleImage < 0) {
-                visibleImage = images.length-1;
-            }
-
-            images.eq(visibleImage).show();
-
-        });
+        //var images = $(".team-content > div");
+        //var visibleImage = 0;
+        //images.eq(visibleImage).show();
+        //
+        //
+        //images.click(function(event){
+        //    images.eq(visibleImage).css("opacity", ".5"));
+        //    if(event.offsetX < $(this).width()/2){
+        //        visibleImage--;
+        //    }
+        //    else {
+        //        visibleImage++;
+        //    }
+        //
+        //    if(visibleImage >= images.length){
+        //        visibleImage = 0;
+        //    }
+        //
+        //    if(visibleImage < 0) {
+        //        visibleImage = images.length-1;
+        //    }
+        //
+        //    images.eq(visibleImage).show();
+        //
+        //});
 
 
         return {
             scrollPage: scrollPage,
             stickyMenu: stickyMenu,
-            clickAndSlide: clickAndSlide
+            //clickAndSlide: clickAndSlide
         }
     };
 
     var app = new Application();
         app.scrollPage();
         app.stickyMenu();
-        app.clickAndSlide();
+        //app.clickAndSlide();
 
 
 
