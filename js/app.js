@@ -40,78 +40,170 @@ $(function(){
             });
         }
 
-        //function clickAndSlide() {
-        //    var arrowRight = $(".arrow-right");
-        //    var arrowLeft = $(".arrow-left");
-        //    var slidedItems = $(".team-member");
-        //    var highlightedItem = 1;
-        //    var i = 1;
+        function clickAndChange() {
+            var arrowRight = $(".arrow-right");
+            var arrowLeft = $(".arrow-left");
+
+            $(".team-content > div").css("opacity", ".2");
+            $(".team-content > div:nth-child(2)").css("opacity", "1");
+
+            $(".skills-container > div").hide();
+            $(".skills-container > div:nth-child(2)").show();
+
+            arrowRight.click(function(){
+                var firstTeamMember = $(".team-content > div:first-child");
+                firstTeamMember.parent().append(firstTeamMember);
+                firstTeamMember.prev().css("opacity", "1").css("transform", "scale(1)");
+                firstTeamMember.prev().prev().css("opacity", ".2").css("transform", "scale(.8)");
+
+                var firstTeamMemberSkillset = $(".skills-container > div:first-child");
+                console.log(firstTeamMemberSkillset);
+                firstTeamMemberSkillset.parent().append(firstTeamMemberSkillset);
+                firstTeamMemberSkillset.prev().prev().hide();
+                firstTeamMemberSkillset.hide();
+                firstTeamMemberSkillset.prev().show();
+            });
+
+            arrowLeft.click(function(){
+               var lastTeamMember = $(".team-content > div:last-child");
+                lastTeamMember.parent().prepend(lastTeamMember);
+                lastTeamMember.next().css("opacity", "1").css("transform", "scale(1)");
+                lastTeamMember.next().next().css("opacity", ".2").css("transform", "scale(.8)");
+
+                var lastTeamMemberSkillset = $(".skills-container > div:last-child");
+                lastTeamMemberSkillset.parent().prepend(lastTeamMemberSkillset);
+                lastTeamMemberSkillset.next().next().hide();
+                lastTeamMemberSkillset.hide();
+                lastTeamMemberSkillset.next().show();
+            });
+        }
+
+        function intervalSlider(){
+            var currentPosition = 0;
+            var slideWidth = 700;
+            var slides = $('.testimonials-slide');
+            var numberOfSlides = slides.length;
+            var slideShowInterval;
+            var speed = 3000;
+
+            slideShowInterval = setInterval(changePosition, speed);
+            slides.wrapAll('<div id="slidesHolder"></div>');
+            slides.css({ 'float' : 'left' });
+            $('#slidesHolder').css('width', slideWidth * numberOfSlides);
+
+            function changePosition() {
+                if(currentPosition == numberOfSlides - 1) {
+                    currentPosition = 0;
+                } else {
+                    currentPosition++;
+                }
+                moveSlide();
+            }
+
+            function moveSlide() {
+                $('#slidesHolder')
+                    .animate({'marginLeft' : slideWidth*(-currentPosition)});
+            }
+        }
+
+
+        function lightbox(){
+            var imageClick = $(".gallery");
+            imageClick.on('click', 'img', function(event){
+                event.preventDefault();
+                var imageSrc = $(this).attr("src");
+
+                if($("#lightbox").length > 0) {
+                    $("#content").html('<img src="' + imageSrc + '" />');
+                    $("#lightbox").fadeIn(200);
+                }
+                else {
+                    var lightbox =
+                        '<div id="lightbox">' +
+                        '<p>Click to close</p>' +
+                        '<div id="content">' + //insert clicked link's href into img src
+                        '<img src="' + imageSrc +'" />' +
+                        '</div>' +
+                        '</div>';
+                    $(lightbox).hide().appendTo("body").fadeIn(200);
+                }
+                $("#lightbox").click(function(){
+                    $(this).fadeOut(200);
+                });
+            });
+        }
+
+
+        function addMoreImages() {
+            var addMoreBtn = $(".btn-watchMore");
+            var moreImages = $(".gallery figure");
+            addMoreBtn.click(function(event){
+                event.preventDefault();
+                console.log(moreImages);
+                var createdImages = moreImages.clone();
+                createdImages.hide().appendTo(".gallery").slideDown(300);
+            });
+
+        }
+
+
+
+
+
+
+
+
+        //function setSkills(){
+        //    // pobierasz atrybuty data
+        //    // wyszukujesz dla kazdego data odpowiedni filoetowy pasek
+        //    // ustawiasz mu width css()
+        //}
         //
-        //    slidedItems.css("opacity", ".3");
-        //    $(".team-content > div:nth-child(2)").css("opacity", "1");
-        //
-        //    arrowRight.click(function(){
-        //        //highlightedItem++;
-        //        //
-        //        //if(highlightedItem >= slidedItems.length){
-        //        //            highlightedItem = 0;
-        //        //        }
-        //        //
-        //        //        images.eq(visibleImage).show();
-        //        i++;
-        //        slidedItems.eq(i).css("order", "3");
-        //        slidedItems.eq(i+1).css("order", "1");
-        //        slidedItems.eq(i-1).css("order", "2");
-        //    });
-        //
-        //    arrowLeft.click(function(){
-        //        slidedItems.eq(1).css("order", "1");
-        //        slidedItems.eq(2).css("order", "2");
-        //        slidedItems.eq(0).css("order", "3");
-        //    });
+        //function showSkills() {
+        //    setSkills();
+        //    arrowLeft.click(function() {
+        //        //przesun element
+        //        setSkills();
+        //    })
         //
         //}
-
-
-        //var images = $(".team-content > div");
-        //var visibleImage = 0;
-        //images.eq(visibleImage).show();
-        //
-        //
-        //images.click(function(event){
-        //    images.eq(visibleImage).css("opacity", ".5"));
-        //    if(event.offsetX < $(this).width()/2){
-        //        visibleImage--;
-        //    }
-        //    else {
-        //        visibleImage++;
-        //    }
-        //
-        //    if(visibleImage >= images.length){
-        //        visibleImage = 0;
-        //    }
-        //
-        //    if(visibleImage < 0) {
-        //        visibleImage = images.length-1;
-        //    }
-        //
-        //    images.eq(visibleImage).show();
-        //
-        //});
 
 
         return {
             scrollPage: scrollPage,
             stickyMenu: stickyMenu,
-            //clickAndSlide: clickAndSlide
+            clickAndChange: clickAndChange,
+            intervalSlider: intervalSlider,
+            lightbox: lightbox,
+            addMoreImages: addMoreImages
+            //showSkills:showSkills
         }
     };
 
     var app = new Application();
         app.scrollPage();
         app.stickyMenu();
-        //app.clickAndSlide();
+        app.clickAndChange();
+        app.intervalSlider();
+        app.lightbox();
+        app.addMoreImages();
+        //app.showSkills();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       //setInterval(moveCircle, 3000);
 
 
     //the end of DOM LOADED function

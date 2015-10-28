@@ -371,14 +371,30 @@ a {
     .skill-box .skill-bar .skill-bar-filled {
       background-color: #9F449B;
       height: 100%; }
-    .skill-box .skill-bar .bar-web-design {
+    .skill-box .skill-bar .bar-web-design-john {
       width: 90%; }
-    .skill-box .skill-bar .bar-html {
+    .skill-box .skill-bar .bar-html-john {
       width: 75%; }
-    .skill-box .skill-bar .bar-graphic-design {
+    .skill-box .skill-bar .bar-graphic-design-john {
       width: 70%; }
-    .skill-box .skill-bar .bar-ui {
+    .skill-box .skill-bar .bar-ui-john {
       width: 85%; }
+    .skill-box .skill-bar .bar-web-design-anna {
+      width: 70%; }
+    .skill-box .skill-bar .bar-html-anna {
+      width: 90%; }
+    .skill-box .skill-bar .bar-graphic-design-anna {
+      width: 70%; }
+    .skill-box .skill-bar .bar-ui-anna {
+      width: 95%; }
+    .skill-box .skill-bar .bar-web-design-steve {
+      width: 80%; }
+    .skill-box .skill-bar .bar-html-steve {
+      width: 85%; }
+    .skill-box .skill-bar .bar-graphic-design-steve {
+      width: 95%; }
+    .skill-box .skill-bar .bar-ui-steve {
+      width: 100%; }
 
 /* ============ SERVICE STYLES ============== */
 /* ============ TESTIMONIALS STYLES ============== */
@@ -412,12 +428,49 @@ a {
     margin: 30px 0;
     text-transform: uppercase; }
 
+.testimonials-window {
+  width: 700px;
+  height: 300px;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  overflow: hidden; }
+
+.testimonials-slide {
+  margin: 0;
+  padding: 0;
+  width: 700px;
+  height: 300px;
+  float: left;
+  position: relative; }
+
 /* ============ PORTFOLIO STYLES ============== */
 .portfolio {
   background-color: #fff; }
   .portfolio h2 {
     font-size: 2.5rem;
     padding: 17% 0; }
+
+#lightbox {
+  background: rgba(0, 0, 0, 0.8);
+  left: 0;
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 1000; }
+
+#lightbox p {
+  color: #fff;
+  font-size: 12px;
+  margin-right: 20px;
+  text-align: right; }
+
+#lightbox img {
+  box-shadow: 0 10px 40px 0 #000;
+  max-width: 80vh;
+  margin-top: 10vh; }
 
 .filter-buttons {
   display: flex;

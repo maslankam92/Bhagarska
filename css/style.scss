@@ -367,17 +367,43 @@ a {
       background-color: $purple;
       height: 100%;
     }
-    .bar-web-design {
+    .bar-web-design-john {
       width: 90%;
     }
-    .bar-html {
+    .bar-html-john {
       width: 75%;
     }
-    .bar-graphic-design {
+    .bar-graphic-design-john {
       width: 70%;
     }
-    .bar-ui {
+    .bar-ui-john {
       width: 85%;
+    }
+
+    .bar-web-design-anna {
+      width: 70%;
+    }
+    .bar-html-anna {
+      width: 90%;
+    }
+    .bar-graphic-design-anna {
+      width: 70%;
+    }
+    .bar-ui-anna {
+      width: 95%;
+    }
+
+    .bar-web-design-steve {
+      width: 80%;
+    }
+    .bar-html-steve {
+      width: 85%;
+    }
+    .bar-graphic-design-steve {
+      width: 95%;
+    }
+    .bar-ui-steve {
+      width: 100%;
     }
   }
 }
@@ -389,8 +415,6 @@ a {
 .service {
   @extend .quote;
 }
-
-
 
 /* ============ TESTIMONIALS STYLES ============== */
 
@@ -427,6 +451,23 @@ a {
   }
 }
 
+.testimonials-window {
+  width: 700px;
+  height:300px;
+  margin:0 auto;
+  padding:0;
+  position:relative;
+  overflow:hidden;
+}
+
+.testimonials-slide {
+  margin:0;
+  padding:0;
+  width:700px;
+  height:300px;
+  float:left;
+  position:relative;
+}
 
 /* ============ PORTFOLIO STYLES ============== */
 
@@ -436,6 +477,30 @@ a {
      font-size: 2.5rem;
      padding: 17% 0;
    }
+}
+
+#lightbox {
+  background: rgba(0,0,0, .8);
+  left:0;
+  height:100%;
+  position:fixed;
+  text-align:center;
+  top:0;
+  width:100%;
+  z-index: 1000;
+}
+
+#lightbox p {
+  color:#fff;
+  font-size:12px;
+  margin-right:20px;
+  text-align:right;
+}
+
+#lightbox img {
+  box-shadow: 0 10px 40px 0 #000;
+  max-width: 80vh;
+  margin-top: 10vh;
 }
 
 .filter-buttons {
