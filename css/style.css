@@ -309,12 +309,30 @@ a {
   margin-bottom: 100px; }
   .team-content .team-member {
     width: 33%; }
-    .team-content .team-member .team-member-img {
+    .team-content .team-member .team-member-img-first {
       background-color: #CDCDCD;
       border-radius: 50%;
       height: 150px;
       margin: 0 auto 50px;
-      width: 150px; }
+      width: 150px;
+      background: url("../images/faceThree.jpg") center center;
+      background-size: cover; }
+    .team-content .team-member .team-member-img-second {
+      background-color: #CDCDCD;
+      border-radius: 50%;
+      height: 150px;
+      margin: 0 auto 50px;
+      width: 150px;
+      background: url("../images/faceOneE.jpg") center center;
+      background-size: cover; }
+    .team-content .team-member .team-member-img-third {
+      background-color: #CDCDCD;
+      border-radius: 50%;
+      height: 150px;
+      margin: 0 auto 50px;
+      width: 150px;
+      background: url("../images/faceTwo.jpg") center center;
+      background-size: cover; }
     .team-content .team-member h4 {
       color: #484848;
       font-weight: bold;
@@ -413,7 +431,7 @@ a {
 
 .testimonials-container {
   margin-top: 100px; }
-  .testimonials-container .testimonials-img {
+  .testimonials-container .testimonials-img img {
     background-color: #CDCDCD;
     border-radius: 50%;
     height: 150px;

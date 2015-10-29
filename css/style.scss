@@ -301,9 +301,22 @@ a {
   margin-bottom: 100px;
   .team-member {
     width: 33%;
-    .team-member-img {
+    .team-member-img-first {
       @include circleImage;
+      background: url("../images/faceThree.jpg") center center;
+      background-size: cover;
     }
+    .team-member-img-second {
+      @include circleImage;
+      background: url("../images/faceOneE.jpg") center center;
+      background-size: cover;
+    }
+    .team-member-img-third {
+      @include circleImage;
+      background: url("../images/faceTwo.jpg") center center;
+      background-size: cover;
+    }
+
   h4 {
     color: $lightBlackFont;
     font-weight: bold;
@@ -436,7 +449,7 @@ a {
 
 .testimonials-container {
   margin-top: 100px;
-  .testimonials-img {
+  .testimonials-img img {
     @include circleImage;
   }
    p:first-of-type {
