@@ -9,6 +9,12 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+
+}
+
 .wrapper {
   max-width: 960px;
   margin: 0 auto;
@@ -177,27 +183,40 @@ a {
 .feature {
   background-color: $greyBg;
   padding: 150px 0;
+  @media #{$mqTabletSM} {
+    padding: 50px 0;
+  }
   .wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    @media $mqTablet {
-
+    @media #{$mqTabletSM} {
+    flex-direction: column;
+    }
   }
     .feature-item {
-      margin: 0 2%;
+      width: 210px;
+      @media #{$mqTabletSM} {
+        margin: 10px auto;
+        width: 90%;
+      }
       &:nth-child(1){
         margin-left: 0;
+        @media #{$mqTabletSM} {
+          margin-left: inherit;
+        }
       }
       &:nth-child(4) {
         margin-right: 0;
+        @media #{$mqTabletSM} {
+          margin-right: inherit;
+        }
       }
     }
   }
-}
 
 .feature-icon {
-  width: 85%;
+  width: 180px;
   height: 190px;
   margin: 0 auto;
 }
@@ -234,32 +253,33 @@ a {
   h4 {
     font-size: 1.2rem;
     font-weight: 500;
-    margin: 15% 0;
+    margin: 30px 0;
   }
   p {
     font-size: .9rem;
     line-height: 1.7;
+    padding: 0 10px;
   }
 }
 
 
 /* ============ MEDIA QUERIES ============== */
 
-@media #{$mqTablet} {
-  body .feature .wrapper {
-    flex-direction: column;
-  }
-  .feature-item {
-    width: 210px;
-    margin: 5% auto;
-    &:nth-child(1){
-      margin-left: 200px;
-    }
-    &:nth-child(4) {
-      margin-right: 10%;
-    }
-  }
-}
+//@media #{$mqTablet} {
+//  body .feature .wrapper {
+//    flex-direction: column;
+//  }
+//  .feature-item {
+//    width: 210px;
+//    margin: 5% auto;
+//    &:nth-child(1){
+//      margin-left: 200px;
+//    }
+//    &:nth-child(4) {
+//      margin-right: 10%;
+//    }
+//  }
+//}
 
 
 /* ============ ABOUT STYLES ============== */

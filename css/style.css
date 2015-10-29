@@ -78,6 +78,11 @@ table {
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
 .wrapper {
   max-width: 960px;
   margin: 0 auto;
@@ -237,23 +242,49 @@ a {
   background-color: #EEEEEE;
   padding: 150px 0;
 }
+@media only screen and (max-width: 850px) {
+  .feature {
+    padding: 50px 0;
+  }
+}
 .feature .wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.feature .wrapper .feature-item {
-  margin: 0 2%;
+@media only screen and (max-width: 850px) {
+  .feature .wrapper {
+    flex-direction: column;
+  }
 }
-.feature .wrapper .feature-item:nth-child(1) {
+.feature .feature-item {
+  width: 210px;
+}
+@media only screen and (max-width: 850px) {
+  .feature .feature-item {
+    margin: 10px auto;
+    width: 90%;
+  }
+}
+.feature .feature-item:nth-child(1) {
   margin-left: 0;
 }
-.feature .wrapper .feature-item:nth-child(4) {
+@media only screen and (max-width: 850px) {
+  .feature .feature-item:nth-child(1) {
+    margin-left: inherit;
+  }
+}
+.feature .feature-item:nth-child(4) {
   margin-right: 0;
+}
+@media only screen and (max-width: 850px) {
+  .feature .feature-item:nth-child(4) {
+    margin-right: inherit;
+  }
 }
 
 .feature-icon {
-  width: 85%;
+  width: 180px;
   height: 190px;
   margin: 0 auto;
 }
@@ -289,30 +320,15 @@ a {
 .feature-item h4 {
   font-size: 1.2rem;
   font-weight: 500;
-  margin: 15% 0;
+  margin: 30px 0;
 }
 .feature-item p {
   font-size: .9rem;
   line-height: 1.7;
+  padding: 0 10px;
 }
 
 /* ============ MEDIA QUERIES ============== */
-@media only screen and (max-width: 960px) {
-  body .feature .wrapper {
-    flex-direction: column;
-  }
-
-  .feature-item {
-    width: 210px;
-    margin: 5% auto;
-  }
-  .feature-item:nth-child(1) {
-    margin-left: 200px;
-  }
-  .feature-item:nth-child(4) {
-    margin-right: 10%;
-  }
-}
 /* ============ ABOUT STYLES ============== */
 .about {
   padding: 50px 0 150px 0;
