@@ -595,8 +595,30 @@ a {
     padding-right: 5%;
     position: relative;
     width: 55%;
-    & > *:not(a) {
+    .tooltip {
+      background: $purple;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px -2px #000;
+      color: $white;
+      font-size: 16px;
+      padding: 10px 20px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: none;
+      z-index: 100;
+      width: 200px;
+    }
+    .tooltipTwo {
+      @extend .tooltip;
+      top: 100px;
+    }
 
+    .tooltipThree {
+      @extend .tooltip;
+      top: 200px;
+    }
+    & > div > *:not(a) {
       display: block;
       font-family: $latoReg;
       font-size: 1.5rem;
@@ -653,4 +675,16 @@ a {
     }
   }
 }
+
+
+.box {
+  position: relative;
+}
+
+
+
+//.contact-form:after {
+//  content: 'Your name is too short';
+//  font-size: 50px;
+//}
 

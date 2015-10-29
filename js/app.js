@@ -40,6 +40,18 @@ $(function(){
             });
         }
 
+
+        function learnMore (){
+            var learnMoreBtn = $(".btn-learnMore");
+
+            learnMoreBtn.on("click", function(){
+                alert("Probably the new page or subpage is triggered here!");
+                return false
+            });
+        }
+
+
+
         function clickAndChange() {
             var arrowRight = $(".arrow-right");
             var arrowLeft = $(".arrow-left");
@@ -146,6 +158,65 @@ $(function(){
 
         }
 
+        function formValidator(){
+
+            function checkName(){
+                $('.contact-form input[name="yourName"]').on("input", function() {
+                    var inputRealTime = this.value;
+                    if(inputRealTime.length < 3
+                        && inputRealTime.length > 0) {
+                        $(".tooltip").fadeIn();
+                    }
+                    else {
+                        $(".tooltip").fadeOut();
+                    }
+                });
+            }
+            function checkEmail(){
+                $('.contact-form input[name="yourEmail"]').on("input", function() {
+                    var inputRealTime = this.value;
+                    if((inputRealTime.indexOf("@") < 0
+                        || inputRealTime.indexOf(" ") != -1
+                        || inputRealTime.indexOf(".") < 0)
+                        && inputRealTime.length > 0) {
+                        $(".tooltipTwo").fadeIn();
+                    }
+                    else {
+                        $(".tooltipTwo").fadeOut();
+                    }
+                });
+            }
+            function checkText(){
+                $('.contact-form textarea').on("input", function() {
+                    var inputRealTime = this.value;
+                    if(inputRealTime.length < 10
+                    && inputRealTime.length > 0) {
+                        $(".tooltipThree").fadeIn();
+                    }
+                    else {
+                        $(".tooltipThree").fadeOut();
+                    }
+                });
+            }
+            checkName();
+            checkEmail();
+            checkText();
+        }
+
+
+        function sendEmail (){
+            var sendMailBtn = $(".btn-sendEmail");
+
+            sendMailBtn.on("click", function(){
+               alert("Wait a minute... This job belongs to backend guy!");
+                return false
+            });
+        }
+
+
+
+
+
 
 
 
@@ -175,7 +246,10 @@ $(function(){
             clickAndChange: clickAndChange,
             intervalSlider: intervalSlider,
             lightbox: lightbox,
-            addMoreImages: addMoreImages
+            addMoreImages: addMoreImages,
+            formValidator: formValidator,
+            sendEmail: sendEmail,
+            learnMore: learnMore
             //showSkills:showSkills
         }
     };
@@ -187,6 +261,9 @@ $(function(){
         app.intervalSlider();
         app.lightbox();
         app.addMoreImages();
+        app.formValidator();
+        app.sendEmail();
+        app.learnMore();
         //app.showSkills();
 
 

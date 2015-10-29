@@ -557,7 +557,24 @@ a {
     padding-right: 5%;
     position: relative;
     width: 55%; }
-    .contact-content .contact-form > *:not(a) {
+    .contact-content .contact-form .tooltip, .contact-content .contact-form .tooltipTwo, .contact-content .contact-form .tooltipThree {
+      background: #9F449B;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px -2px #000;
+      color: #fff;
+      font-size: 16px;
+      padding: 10px 20px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: none;
+      z-index: 100;
+      width: 200px; }
+    .contact-content .contact-form .tooltipTwo {
+      top: 100px; }
+    .contact-content .contact-form .tooltipThree {
+      top: 200px; }
+    .contact-content .contact-form > div > *:not(a) {
       display: block;
       font-family: "latoregular", sans-serif;
       font-size: 1.5rem;
@@ -620,5 +637,8 @@ a {
       border: 1px solid #00aced;
       color: #fff;
       transition: .2s; }
+
+.box {
+  position: relative; }
 
 /*# sourceMappingURL=style.css.map */

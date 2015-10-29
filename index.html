@@ -450,9 +450,18 @@
             </div>
             <div class="contact-content">
                 <div class="contact-form">
-                    <input type="text" name="yourName" placeholder="Your name">
-                    <input type="email" name="yourEmail" placeholder="Your email">
-                    <textarea name="yourMessage" placeholder="Your Message" rows="6"></textarea>
+                    <div class="box" data-text="Your name is too short">
+                        <input type="text" name="yourName" placeholder="Your name">
+                        <div class="tooltip">Your name is too short!</div>
+                    </div>
+                    <div class="bo" data-text="Invalid email address">
+                        <input type="email" name="yourEmail" placeholder="Your email">
+                        <div class="tooltipTwo">Type valid email address!</div>
+                    </div>
+                    <div class="bx" data-text="Tell us something more!">
+                        <textarea name="yourMessage" placeholder="Your Message" rows="6"></textarea>
+                        <div class="tooltipThree">Tell us something more!</div>
+                    </div>
                     <div class="button-line">
                         <a href="#" class="btn btn-sendEmail">Send email</a>
                     </div>
@@ -462,9 +471,10 @@
                     <p>1600 Pennsylvania Ave NW, Washington<br>DC 20500, United States of America.</p>
                     <p>T: (202) 456-1111<br>M: (202) 456-1212</p>
                     <div class="social-icons">
-                        <div class="fb-icon"><a href="#">f</a></div>
-                        <div class="tw-icon"><a href="#">t</a></div>
-                        <div class="g-icon"><a href="#">g</a></div>
+                        <div class="fb-icon"><a href="http://www.facebook.com">f</a></div>
+                        <div class="tw-icon"><a href="http://www.twitter.com">t</a></div>
+                        <div class="g-icon"><a href="http://www.google.com">g</a></div>
+                        <div class="g-icon"><a href="http://www.google.com">g</a></div>
                     </div>
                 </div>
             </div>
