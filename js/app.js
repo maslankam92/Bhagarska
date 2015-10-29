@@ -125,6 +125,7 @@ $(function(){
                 event.preventDefault();
                 var imageSrc = $(this).attr("src");
 
+
                 if($("#lightbox").length > 0) {
                     $("#content").html('<img src="' + imageSrc + '" />');
                     $("#lightbox").fadeIn(200);
@@ -146,16 +147,36 @@ $(function(){
         }
 
 
+        function filterImages() {
+
+            var filterBtns = $(".filter-buttons");
+            var allImages = $(".gallery figure");
+
+            filterBtns.on("click", ".btn-filter", function(event){
+                event.preventDefault();
+
+                // this line is major for appropriate running of this function. when Watch More button is clicked, allImages variable updates all new loaded figures
+                allImages = $(".gallery figure");
+
+                if($(this).hasClass("activeBtn") === false) {
+                    $(this).addClass("activeBtn");
+                    $(this).siblings().removeClass("activeBtn");
+                    var dataFilterName = $(this).data("filter");
+                    allImages.hide();
+                    var filteredImages = allImages.filter(dataFilterName);
+                    filteredImages.fadeIn(500);
+                }
+            });
+        }
+
         function addMoreImages() {
             var addMoreBtn = $(".btn-watchMore");
             var moreImages = $(".gallery figure");
             addMoreBtn.click(function(event){
                 event.preventDefault();
-                console.log(moreImages);
                 var createdImages = moreImages.clone();
                 createdImages.hide().appendTo(".gallery").slideDown(300);
             });
-
         }
 
         function formValidator(){
@@ -224,6 +245,9 @@ $(function(){
 
 
 
+
+
+
         //function setSkills(){
         //    // pobierasz atrybuty data
         //    // wyszukujesz dla kazdego data odpowiedni filoetowy pasek
@@ -246,6 +270,7 @@ $(function(){
             clickAndChange: clickAndChange,
             intervalSlider: intervalSlider,
             lightbox: lightbox,
+            filterImages: filterImages,
             addMoreImages: addMoreImages,
             formValidator: formValidator,
             sendEmail: sendEmail,
@@ -260,6 +285,7 @@ $(function(){
         app.clickAndChange();
         app.intervalSlider();
         app.lightbox();
+        app.filterImages();
         app.addMoreImages();
         app.formValidator();
         app.sendEmail();
