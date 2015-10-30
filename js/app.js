@@ -6,7 +6,7 @@ $(function(){
     var Application = function(){
 
         function scrollPage(){
-            var links = $(".header-nav a, .main-nav a, .last-logo a");
+            var links = $(".header-nav a, .main-nav a, .last-logo a, .hamburger-menu a");
 
             links.click(function(){
                 $("html, body").animate({
@@ -37,6 +37,23 @@ $(function(){
                     menuBar.removeClass("sticky");
                     menuBar.css("opacity", "1");
                 }
+            });
+        }
+
+
+        function clickHamburgerBtn(){
+
+            var hamburgerBtn = $(".c-hamburger");
+
+            hamburgerBtn.on("click", function(e){
+                e.preventDefault();
+                (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+                $(".hamburger-menu").toggle();
+            });
+            $(".hamburger-menu a").on("click", function(e){
+                e.preventDefault();
+                hamburgerBtn.hasClass("is-active") === true ? hamburgerBtn.removeClass("is-active") : hamburgerBtn.addClass("is-active");
+                $(".hamburger-menu").toggle();
             });
         }
 
@@ -193,6 +210,7 @@ $(function(){
                     }
                 });
             }
+
             function checkEmail(){
                 $('.contact-form input[name="yourEmail"]').on("input", function() {
                     var inputRealTime = this.value;
@@ -274,7 +292,8 @@ $(function(){
             addMoreImages: addMoreImages,
             formValidator: formValidator,
             sendEmail: sendEmail,
-            learnMore: learnMore
+            learnMore: learnMore,
+            clickHamburgerBtn: clickHamburgerBtn
             //showSkills:showSkills
         }
     };
@@ -290,13 +309,45 @@ $(function(){
         app.formValidator();
         app.sendEmail();
         app.learnMore();
+        app.clickHamburgerBtn();
         //app.showSkills();
 
 
 
 
 
+    //var toggles = document.querySelectorAll(".c-hamburger");
+    //
+    //for (var i = toggles.length - 1; i >= 0; i--) {
+    //    var toggle = toggles[i];
+    //    toggleHandler(toggle);
+    //};
+    //
+    //function toggleHandler(toggle) {
+    //    toggle.addEventListener( "click", function(e) {
+    //        e.preventDefault();
+    //        (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+    //    });
+    //}
 
+
+
+
+
+    //$(".c-hamburger").on("click", function(){
+    //    $(".hamburger-menu").toggle();
+    //});
+
+
+    //
+    //$(window).resize(function() {
+    //    if ($(window).width() < 600) {
+    //        $(".main-nav ul").addClass("hamburger-menu")
+    //    }
+    //    else {
+    //        $(".main-nav ul").removeClass("hamburger-menu")
+    //    }
+    //});
 
 
 

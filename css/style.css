@@ -72,7 +72,6 @@ table {
   font-weight: normal;
   font-style: normal;
 }
-/* ============ MEDIA QUERIES ============== */
 /* ============ GENERAL STYLES ============== */
 * {
   box-sizing: border-box;
@@ -205,6 +204,11 @@ a {
   box-shadow: 0 2px 10px -5px #000;
   padding: 1% 0;
 }
+@media only screen and (max-width: 600px) {
+  .navigation {
+    display: none;
+  }
+}
 .navigation .wrapper {
   align-content: center;
   display: flex;
@@ -218,23 +222,172 @@ a {
   font-weight: 600;
   align-self: center;
 }
+@media only screen and (max-width: 960px) {
+  .logo, .footer .last-logo {
+    margin-left: 10px;
+  }
+}
 .logo span, .footer .last-logo span {
   color: #9F449B;
 }
 
-.main-nav ul {
+.main-nav .desktop-menu {
   display: inline-block;
 }
-.main-nav ul li {
+.main-nav .desktop-menu li {
   display: inline-block;
 }
-.main-nav ul li a {
+@media only screen and (max-width: 960px) {
+  .main-nav .desktop-menu li:nth-child(4), .main-nav .desktop-menu li:nth-child(6) {
+    display: none;
+  }
+}
+.main-nav .desktop-menu li a {
   display: block;
   padding: 20px 10px;
 }
-.main-nav ul li a:hover {
+.main-nav .desktop-menu li a:hover {
   color: #9F449B;
   font-weight: 600;
+}
+
+.hamburger-btn {
+  position: fixed;
+  top: 20px;
+  left: 40px;
+  z-index: 99999999999;
+}
+
+.c-hamburger {
+  display: none;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  margin-right: 40px;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  font-size: 0;
+  text-indent: -9999px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.c-hamburger:focus {
+  outline: none;
+}
+
+.c-hamburger span {
+  display: block;
+  position: absolute;
+  top: 22px;
+  left: 9px;
+  right: 9px;
+  height: 4px;
+  background: white;
+}
+
+.c-hamburger span::before,
+.c-hamburger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  content: "";
+}
+
+.c-hamburger span::before {
+  top: -10px;
+}
+
+.c-hamburger span::after {
+  bottom: -10px;
+}
+
+.c-hamburger--htx {
+  background-color: #9F449B;
+}
+
+.c-hamburger--htx span {
+  transition: background 0s 0.3s;
+}
+
+.c-hamburger--htx span::before,
+.c-hamburger--htx span::after {
+  transition-duration: 0.3s, 0.3s;
+  transition-delay: 0.3s, 0s;
+}
+
+.c-hamburger--htx span::before {
+  transition-property: top, transform;
+}
+
+.c-hamburger--htx span::after {
+  transition-property: bottom, transform;
+}
+
+/* active state, i.e. menu open */
+.c-hamburger--htx.is-active {
+  background-color: #6B2E68;
+}
+
+.c-hamburger--htx.is-active span {
+  background: none;
+}
+
+.c-hamburger--htx.is-active span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.c-hamburger--htx.is-active span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.c-hamburger--htx.is-active span::before,
+.c-hamburger--htx.is-active span::after {
+  transition-delay: 0s, 0.3s;
+}
+
+@media only screen and (max-width: 600px) {
+  .c-hamburger {
+    display: block;
+  }
+}
+
+.hamburger-menu {
+  background-color: #9F449B;
+  display: none;
+  opacity: .8;
+  position: absolute;
+  left: 60px;
+  top: 0;
+  width: 200px;
+}
+.hamburger-menu li a {
+  color: #fff;
+  display: block;
+  padding: 20px 0;
+}
+.hamburger-menu li {
+  display: block;
+}
+@media only screen and (min-width: 600px) {
+  .hamburger-menu li {
+    display: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .hamburger-menu {
+    display: none;
+  }
 }
 
 /* ============ FEATURE STYLES ============== */
@@ -242,7 +395,7 @@ a {
   background-color: #EEEEEE;
   padding: 150px 0;
 }
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 960px) {
   .feature {
     padding: 50px 0;
   }
@@ -252,7 +405,7 @@ a {
   flex-direction: row;
   justify-content: space-between;
 }
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 960px) {
   .feature .wrapper {
     flex-direction: column;
   }
@@ -260,16 +413,26 @@ a {
 .feature .feature-item {
   width: 210px;
 }
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 960px) {
   .feature .feature-item {
-    margin: 10px auto;
     width: 90%;
+    margin: 10px auto;
+  }
+}
+.feature .feature-item .feature-item-text {
+  display: inline-block;
+}
+@media only screen and (max-width: 960px) {
+  .feature .feature-item .feature-item-text {
+    display: inline-block;
+    width: 60%;
+    vertical-align: top;
   }
 }
 .feature .feature-item:nth-child(1) {
   margin-left: 0;
 }
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 960px) {
   .feature .feature-item:nth-child(1) {
     margin-left: inherit;
   }
@@ -277,7 +440,7 @@ a {
 .feature .feature-item:nth-child(4) {
   margin-right: 0;
 }
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 960px) {
   .feature .feature-item:nth-child(4) {
     margin-right: inherit;
   }
@@ -287,6 +450,11 @@ a {
   width: 180px;
   height: 190px;
   margin: 0 auto;
+}
+@media only screen and (max-width: 960px) {
+  .feature-icon {
+    display: inline-block;
+  }
 }
 
 .feature-icon-hearth {
@@ -328,10 +496,19 @@ a {
   padding: 0 10px;
 }
 
-/* ============ MEDIA QUERIES ============== */
 /* ============ ABOUT STYLES ============== */
 .about {
   padding: 50px 0 150px 0;
+}
+@media only screen and (max-width: 960px) {
+  .about {
+    padding: 0 0 50px;
+  }
+}
+@media only screen and (max-width: 960px) {
+  .about .wrapper {
+    width: 95%;
+  }
 }
 
 .border-headline-width {
@@ -350,6 +527,12 @@ a {
   font-weight: bolder;
   font-size: 2.5rem;
   padding: 17%;
+}
+@media only screen and (max-width: 960px) {
+  .border-headline h2 {
+    font-size: 1.8rem;
+    padding: 13%;
+  }
 }
 .border-headline h2 span {
   color: #9F449B;
@@ -395,6 +578,11 @@ a {
   background-size: cover;
   padding: 150px 0;
 }
+@media only screen and (max-width: 960px) {
+  .quote, .service {
+    padding: 50px 0;
+  }
+}
 .quote h3, .service h3 {
   color: #fff;
   font-size: 2.2rem;
@@ -402,8 +590,19 @@ a {
 }
 
 /* ============ TEAM STYLES ============== */
+@media only screen and (max-width: 960px) {
+  .team .wrapper {
+    width: 95%;
+  }
+}
+
 .arrows-nav {
   margin: 10% 0;
+}
+@media only screen and (max-width: 960px) {
+  .arrows-nav {
+    margin: 30px 0;
+  }
 }
 .arrows-nav img {
   transition: .1s;
@@ -565,6 +764,16 @@ a {
   background-color: #EEEEEE;
   padding: 100px 0;
 }
+@media only screen and (max-width: 960px) {
+  .testimonials {
+    padding: 50px 0;
+  }
+}
+@media only screen and (max-width: 960px) {
+  .testimonials .wrapper {
+    width: 95%;
+  }
+}
 .testimonials .statistics-container {
   display: flex;
   flex-direction: row;
@@ -579,6 +788,12 @@ a {
 
 .testimonials-container {
   margin-top: 100px;
+}
+@media only screen and (max-width: 960px) {
+  .testimonials-container {
+    margin-top: 0;
+    display: none;
+  }
 }
 .testimonials-container .testimonials-img img {
   background-color: #CDCDCD;
@@ -620,9 +835,30 @@ a {
 .portfolio {
   background-color: #fff;
 }
-.portfolio h2 {
+.portfolio .border-headline-width {
+  margin: 50px 0;
+  width: 100%;
+}
+.portfolio .border-headline {
+  background: url("../images/cornerBorder.png") no-repeat;
+  background-size: contain;
+  margin: 0 auto;
+  width: 30%;
+}
+.portfolio .border-headline h2 {
+  font-family: 'existencelight', sans-serif;
+  font-weight: bolder;
   font-size: 2.5rem;
-  padding: 17% 0;
+  padding: 17%;
+}
+@media only screen and (max-width: 960px) {
+  .portfolio .border-headline h2 {
+    font-size: 1.8rem;
+    padding: 13%;
+  }
+}
+.portfolio .border-headline h2 span {
+  color: #9F449B;
 }
 
 #lightbox {
@@ -734,13 +970,35 @@ a {
 .footer {
   margin-top: 100px;
 }
+.footer .border-headline-width {
+  margin: 50px 0;
+  width: 100%;
+}
 .footer .border-headline {
-  background-color: #fff;
-  margin-bottom: 100px;
+  background: url("../images/cornerBorder.png") no-repeat;
+  background-size: contain;
+  margin: 0 auto;
+  width: 30%;
 }
 .footer .border-headline h2 {
+  font-family: 'existencelight', sans-serif;
+  font-weight: bolder;
   font-size: 2.5rem;
-  padding: 17% 0;
+  padding: 17%;
+}
+@media only screen and (max-width: 960px) {
+  .footer .border-headline h2 {
+    font-size: 1.8rem;
+    padding: 13%;
+  }
+}
+.footer .border-headline h2 span {
+  color: #9F449B;
+}
+@media only screen and (max-width: 960px) {
+  .footer .wrapper {
+    width: 95%;
+  }
 }
 .footer .last-logo {
   font-size: 2.5rem;

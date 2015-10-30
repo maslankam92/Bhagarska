@@ -141,6 +141,9 @@ a {
 .navigation {
   box-shadow: 0 2px 10px -5px $black;
   padding: 1% 0;
+  @media #{$mqTabletSM} {
+    display: none;
+  }
   .wrapper {
     align-content: center;
     display: flex;
@@ -154,16 +157,25 @@ a {
   font-size: 1.5rem;
   font-weight: 600;
   align-self: center;
+  @media #{$mqTablet} {
+    margin-left: 10px;
+  }
   span {
     color: $purple;
   }
 }
 
 .main-nav {
-  ul {
+  .desktop-menu {
     display: inline-block;
     li {
       display: inline-block;
+      &:nth-child(4),
+      &:nth-child(6) {
+        @media #{$mqTablet} {
+          display: none;
+        }
+      }
       a {
         display: block;
         padding: 20px 10px;
@@ -176,6 +188,41 @@ a {
   }
 }
 
+@include hamburgerMenuBtn;
+
+.c-hamburger {
+  @media #{$mqTabletSM} {
+    display: block;
+  }
+}
+
+
+.hamburger-menu {
+  background-color: $purple;
+  display: none;
+  opacity: .8;
+  position: absolute;
+  left: 60px;
+  top: 0;
+  width: 200px;
+  & li {
+    & a {
+      color: $white;
+      display: block;
+      padding: 20px 0;
+    }
+  }
+
+  & li {
+    display: block;
+    @media only screen and (min-width: 600px) {
+      display: none;
+    }
+  }
+  @media #{$mqTabletSM} {
+    display: none;
+  }
+}
 
 
 /* ============ FEATURE STYLES ============== */
@@ -183,32 +230,40 @@ a {
 .feature {
   background-color: $greyBg;
   padding: 150px 0;
-  @media #{$mqTabletSM} {
+  @media #{$mqTablet} {
     padding: 50px 0;
   }
   .wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    @media #{$mqTabletSM} {
+    @media #{$mqTablet} {
     flex-direction: column;
     }
   }
     .feature-item {
       width: 210px;
-      @media #{$mqTabletSM} {
-        margin: 10px auto;
+      @media #{$mqTablet}{
         width: 90%;
+        margin: 10px auto;
+      }
+      .feature-item-text {
+        display: inline-block;
+        @media #{$mqTablet}{
+          display: inline-block;
+          width: 60%;
+          vertical-align: top;
+        }
       }
       &:nth-child(1){
         margin-left: 0;
-        @media #{$mqTabletSM} {
+        @media #{$mqTablet} {
           margin-left: inherit;
         }
       }
       &:nth-child(4) {
         margin-right: 0;
-        @media #{$mqTabletSM} {
+        @media #{$mqTablet} {
           margin-right: inherit;
         }
       }
@@ -219,6 +274,9 @@ a {
   width: 180px;
   height: 190px;
   margin: 0 auto;
+  @media #{$mqTablet}{
+    display: inline-block;
+  }
 }
 
 .feature-icon-hearth {
@@ -262,35 +320,22 @@ a {
   }
 }
 
-
-/* ============ MEDIA QUERIES ============== */
-
-//@media #{$mqTablet} {
-//  body .feature .wrapper {
-//    flex-direction: column;
-//  }
-//  .feature-item {
-//    width: 210px;
-//    margin: 5% auto;
-//    &:nth-child(1){
-//      margin-left: 200px;
-//    }
-//    &:nth-child(4) {
-//      margin-right: 10%;
-//    }
-//  }
-//}
-
-
 /* ============ ABOUT STYLES ============== */
 
 
 .about {
   padding: 50px 0 150px 0;
+  @media #{$mqTablet}{
+    padding: 0 0 50px;
+  }
+  .wrapper {
+    @media #{$mqTablet}{
+      width: 95%;
+    }
+  }
 }
 
 @include cornerBorderOnHeadline;
-
 
 .about-container {
   display: flex;
@@ -321,6 +366,9 @@ a {
   background: url("../images/middleSectionBgImage.jpg") fixed;
   background-size: cover;
   padding: 150px 0;
+  @media #{$mqTablet}{
+    padding: 50px 0;
+  }
   h3 {
     color: $white;
     font-size: 2.2rem;
@@ -330,8 +378,17 @@ a {
 
 /* ============ TEAM STYLES ============== */
 
+.team .wrapper {
+  @media #{$mqTablet} {
+    width: 95%;
+  }
+}
+
 .arrows-nav {
   margin: 10% 0;
+  @media #{$mqTablet} {
+    margin: 30px 0;
+  }
   img {
     transition: .1s;
   }
@@ -485,6 +542,14 @@ a {
 .testimonials {
   background-color: $greyBg;
   padding: 100px 0;
+  @media #{$mqTablet} {
+    padding: 50px 0;
+  }
+  .wrapper {
+    @media #{$mqTablet} {
+      width: 95%;
+    }
+  }
   .statistics-container {
     display: flex;
     flex-direction: row;
@@ -500,6 +565,10 @@ a {
 
 .testimonials-container {
   margin-top: 100px;
+  @media #{$mqTablet} {
+    margin-top: 0;
+    display: none;
+  }
   .testimonials-img img {
     @include circleImage;
   }
@@ -537,10 +606,7 @@ a {
 
 .portfolio {
   background-color: $white;
-   h2 {
-     font-size: 2.5rem;
-     padding: 17% 0;
-   }
+   @include cornerBorderOnHeadline;
 }
 
 #lightbox {
@@ -641,12 +707,10 @@ a {
 
 .footer {
   margin-top: 100px;
-  .border-headline {
-    background-color: $white;
-    margin-bottom: 100px;
-    h2 {
-      font-size: 2.5rem;
-      padding: 17% 0;
+  @include cornerBorderOnHeadline;
+  .wrapper {
+    @media #{$mqTablet} {
+      width: 95%;
     }
   }
   .last-logo {
