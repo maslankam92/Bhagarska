@@ -179,8 +179,18 @@ a {
 .header-nav .header-nav-first {
   width: 100%;
 }
+@media only screen and (max-width: 480px) {
+  .header-nav .header-nav-first {
+    display: none;
+  }
+}
 .header-nav .header-nav-second {
   width: 100%;
+}
+@media only screen and (max-width: 480px) {
+  .header-nav .header-nav-second {
+    display: none;
+  }
 }
 .header-nav .header-nav-second > div:nth-child(2) {
   margin-right: 30%;
@@ -429,6 +439,11 @@ a {
     vertical-align: top;
   }
 }
+@media only screen and (max-width: 480px) {
+  .feature .feature-item .feature-item-text {
+    width: 90%;
+  }
+}
 .feature .feature-item:nth-child(1) {
   margin-left: 0;
 }
@@ -542,15 +557,30 @@ a {
   display: flex;
   flex-direction: row;
 }
+@media only screen and (max-width: 600px) {
+  .about-container {
+    flex-direction: column;
+  }
+}
 .about-container img {
   min-width: 50%;
   width: 60%;
   max-height: 300px;
 }
+@media only screen and (max-width: 600px) {
+  .about-container img {
+    margin: 0 auto;
+  }
+}
 .about-container .about-text {
   text-align: left;
   position: relative;
   margin-left: 2%;
+}
+@media only screen and (max-width: 600px) {
+  .about-container .about-text {
+    margin: 10px 0;
+  }
 }
 .about-container .about-text p {
   font-size: .8rem;
@@ -570,6 +600,16 @@ a {
   box-shadow: none;
   bottom: -4px;
   transition: .1s;
+}
+@media only screen and (max-width: 600px) {
+  .about-container .about-text a {
+    position: static;
+    margin-top: 20px;
+    display: inline-block;
+    width: 180px;
+    margin-left: 25%;
+    text-align: center;
+  }
 }
 
 /* ============ QUOTE STYLES ============== */
@@ -610,10 +650,12 @@ a {
 .arrows-nav img:nth-child(1):hover {
   transform: scale(0.9);
   transition: .1s;
+  cursor: pointer;
 }
 .arrows-nav img:nth-child(2):hover {
   transform: scale(0.9);
   transition: .1s;
+  cursor: pointer;
 }
 
 .team-content {
@@ -621,6 +663,11 @@ a {
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 100px;
+}
+@media only screen and (max-width: 480px) {
+  .team-content {
+    margin-bottom: 0;
+  }
 }
 .team-content .team-member {
   width: 33%;
@@ -692,8 +739,19 @@ a {
   justify-content: space-between;
   margin: 100px 0;
 }
+@media only screen and (max-width: 480px) {
+  .skills-content {
+    flex-direction: column;
+    margin: 50px 0;
+  }
+}
 .skills-content > div {
   width: 45%;
+}
+@media only screen and (max-width: 480px) {
+  .skills-content > div {
+    width: 100%;
+  }
 }
 
 .skill-box {
@@ -780,10 +838,20 @@ a {
   justify-content: space-between;
   padding: 50px 0;
 }
+@media only screen and (max-width: 480px) {
+  .testimonials .statistics-container {
+    padding: 20px 0;
+  }
+}
 .testimonials .statistics-container .statistic p:first-child {
   color: #000;
   font-size: 2.5rem;
   margin-bottom: 10px;
+}
+@media only screen and (max-width: 480px) {
+  .testimonials .statistics-container .statistic p:first-child {
+    font-size: 1.8rem;
+  }
 }
 
 .testimonials-container {
@@ -924,6 +992,17 @@ a {
   width: 30%;
   margin: 4% 1%;
 }
+@media only screen and (max-width: 600px) {
+  .gallery figure {
+    width: 40%;
+    margin: 2% auto;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .gallery figure {
+    width: 90%;
+  }
+}
 .gallery figure .image-container {
   background: url("../images/hoverImg.png");
   background-size: cover;
@@ -964,6 +1043,11 @@ a {
   box-shadow: none;
   bottom: -4px;
   transition: .1s;
+}
+@media only screen and (max-width: 600px) {
+  .btn-watchMore {
+    left: 30%;
+  }
 }
 
 /* ============ FOOTER STYLES ============== */
@@ -1010,10 +1094,21 @@ a {
   display: flex;
   flex-direction: row;
 }
+@media only screen and (max-width: 600px) {
+  .contact-content {
+    flex-direction: column;
+  }
+}
 .contact-content .contact-form {
   padding-right: 5%;
   position: relative;
   width: 55%;
+}
+@media only screen and (max-width: 600px) {
+  .contact-content .contact-form {
+    width: 100%;
+    padding-right: 0;
+  }
 }
 .contact-content .contact-form .tooltip, .contact-content .contact-form .tooltipTwo, .contact-content .contact-form .tooltipThree {
   background: #9F449B;
@@ -1062,12 +1157,23 @@ a {
   bottom: -4px;
   transition: .1s;
 }
+@media only screen and (max-width: 600px) {
+  .contact-content .contact-form .btn-sendEmail {
+    left: 30%;
+  }
+}
 .contact-content .contact-text {
   text-align: left;
   font-size: 1.2rem;
   line-height: 1.5;
   width: 45%;
   position: relative;
+}
+@media only screen and (max-width: 600px) {
+  .contact-content .contact-text {
+    width: 100%;
+    margin: 20px 0;
+  }
 }
 .contact-content .contact-text p:nth-of-type(2), .contact-content .contact-text p:nth-of-type(3) {
   font-weight: bolder;
@@ -1076,6 +1182,12 @@ a {
 .contact-content .social-icons {
   bottom: 100px;
   position: absolute;
+}
+@media only screen and (max-width: 600px) {
+  .contact-content .social-icons {
+    position: static;
+    margin-top: 20px;
+  }
 }
 .contact-content .social-icons > div {
   display: inline-block;

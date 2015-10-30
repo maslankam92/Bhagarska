@@ -111,10 +111,16 @@ a {
   }
   .header-nav-first {
     width: 100%;
+    @media #{$mqPhone} {
+      display: none;
+    }
   }
 
   .header-nav-second {
     width: 100%;
+    @media #{$mqPhone} {
+      display: none;
+    }
     & > div:nth-child(2) {
       margin-right: 30%;
     }
@@ -254,6 +260,9 @@ a {
           width: 60%;
           vertical-align: top;
         }
+        @media #{$mqPhone} {
+          width: 90%;
+        }
       }
       &:nth-child(1){
         margin-left: 0;
@@ -340,21 +349,39 @@ a {
 .about-container {
   display: flex;
   flex-direction: row;
+  @media #{$mqTabletSM} {
+    flex-direction: column;
+  }
   img {
     min-width: 50%;
     width: 60%;
     max-height: 300px;
+    @media #{$mqTabletSM} {
+      margin: 0 auto;
+    }
   }
   .about-text {
     text-align: left;
     position: relative;
     margin-left: 2%;
+    @media #{$mqTabletSM} {
+      margin: 10px 0;
+    }
     p {
       font-size: .8rem;
       line-height: 2.5;
     }
     a {
       @include mainBtn;
+      @media #{$mqTabletSM} {
+        position: static;
+        margin-top: 20px;
+        display: inline-block;
+        width: 180px;
+        margin-left: 25%;
+
+        text-align: center;
+      }
     }
   }
 }
@@ -395,10 +422,12 @@ a {
   & img:nth-child(1):hover {
     transform: scale(.9);
     transition: .1s;
+    cursor: pointer;
   }
   & img:nth-child(2):hover {
     transform: scale(.9);
     transition: .1s;
+    cursor: pointer;
   }
 }
 
@@ -407,6 +436,9 @@ a {
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 100px;
+  @media #{$mqPhone} {
+    margin-bottom: 0;
+  }
   .team-member {
     width: 33%;
     .team-member-img-first {
@@ -460,8 +492,15 @@ a {
   flex-direction: row;
   justify-content: space-between;
   margin: 100px 0;
+  @media #{$mqPhone} {
+    flex-direction: column;
+    margin: 50px 0;
+  }
   & > div {
     width: 45%;
+    @media #{$mqPhone} {
+      width: 100%;
+    }
   }
 }
 
@@ -555,10 +594,16 @@ a {
     flex-direction: row;
     justify-content: space-between;
     padding: 50px 0;
+    @media #{$mqPhone} {
+      padding: 20px 0;
+    }
     .statistic p:first-child {
       color: $black;
       font-size: 2.5rem;
       margin-bottom: 10px;
+      @media #{$mqPhone} {
+        font-size: 1.8rem;
+      }
     }
   }
 }
@@ -670,6 +715,13 @@ a {
    figure {
      width: 30%;
      margin: 4% 1%;
+     @media #{$mqTabletSM} {
+       width: 40%;
+       margin: 2% auto;
+     }
+     @media #{$mqPhone} {
+       width: 90%;
+     }
      .image-container {
        background: url("../images/hoverImg.png");
        background-size: cover;
@@ -700,6 +752,9 @@ a {
 .btn-watchMore {
   @include mainBtn;
   left: 40%;
+  @media #{$mqTabletSM} {
+    left: 30%;
+  }
 }
 
 
@@ -724,10 +779,17 @@ a {
   color: $black;
   display: flex;
   flex-direction: row;
+  @media #{$mqTabletSM} {
+    flex-direction: column;
+  }
   .contact-form {
     padding-right: 5%;
     position: relative;
     width: 55%;
+    @media #{$mqTabletSM} {
+      width: 100%;
+      padding-right: 0;
+    }
     .tooltip {
       background: $purple;
       border-radius: 10px;
@@ -765,6 +827,9 @@ a {
        @include mainBtn;
        font-size: initial;
        left: 0;
+      @media #{$mqTabletSM} {
+        left: 30%;
+      }
      }
   }
   .contact-text {
@@ -773,6 +838,10 @@ a {
     line-height: 1.5;
     width: 45%;
     position: relative;
+    @media #{$mqTabletSM} {
+      width: 100%;
+      margin: 20px 0;
+    }
     & p:nth-of-type(2),
     & p:nth-of-type(3) {
       font-weight: bolder;
@@ -782,6 +851,10 @@ a {
   .social-icons {
     bottom: 100px;
     position: absolute;
+    @media #{$mqTabletSM} {
+      position: static;
+      margin-top: 20px;
+    }
     & > div {
       display: inline-block;
       & > a {
