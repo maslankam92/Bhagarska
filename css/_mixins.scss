@@ -2,11 +2,13 @@
 
 }
 
-
+// sprite for feature section items
 @mixin featureSpriteDisplay($positionX, $positionY) {
   background: url("../images/iconsSprite.png") no-repeat $positionX $positionY;
 }
 
+
+// border on corners' headline2 (frame)
 @mixin cornerBorderOnHeadline {
   .border-headline-width {
     margin: 50px 0;
@@ -34,7 +36,7 @@
   }
 }
 
-
+// main btn on the page; big purple with hover state
 @mixin mainBtn {
     position: absolute;
     bottom: 0;
@@ -67,6 +69,7 @@
   width: 150px;
 }
 
+// all styles for hamburger menu
 @mixin hamburgerMenuBtn {
 
   .hamburger-btn {

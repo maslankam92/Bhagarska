@@ -667,6 +667,9 @@ a {
 @media only screen and (max-width: 480px) {
   .team-content {
     margin-bottom: 0;
+    overflow: hidden;
+    min-width: 320px;
+    margin-left: -30px;
   }
 }
 .team-content .team-member {
@@ -1226,7 +1229,5 @@ a {
 .box {
   position: relative;
 }
-
-/* ============ MEDIA QUERIES ============== */
 
 /*# sourceMappingURL=style.css.map */

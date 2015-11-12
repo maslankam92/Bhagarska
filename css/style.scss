@@ -438,6 +438,9 @@ a {
   margin-bottom: 100px;
   @media #{$mqPhone} {
     margin-bottom: 0;
+    overflow: hidden;
+    min-width: 320px;
+    margin-left: -30px;
   }
   .team-member {
     width: 33%;
@@ -885,13 +888,6 @@ a {
 .box {
   position: relative;
 }
-
-/* ============ MEDIA QUERIES ============== */
-
-
-
-
-
 
 
 
